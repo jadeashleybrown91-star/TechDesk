@@ -1,0 +1,16 @@
+﻿@model TechDesk.Models.Device
+<div class="col-md-4 mb-3">
+    <div class="card">
+        <div class="card-body">
+            <h5><a href="/devices/@Model.Id">@Model.Name</a></h5>
+            <p>
+                @Model.AssetTag <br />
+                @Model.Category - @Model.PurchaseYear <br />
+                @(Model.IsOnLoan ? "On Loan" : "Available")
+            </p>
+            <a href="/devices/@Model.Id" class="btn btn-primary btn-sm">View</a>
+            <a href="/devices/edit/@Model.Id" class="btn btn-warning btn-sm">Edit</a>
+            <a href="/devices/delete/@Model.Id" class="btn btn-danger btn-sm">Delete</a>
+        </div>
+    </div>
+</div>

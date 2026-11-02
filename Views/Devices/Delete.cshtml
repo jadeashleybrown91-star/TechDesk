@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model TechDesk.Models.Device
+
+    ViewData["Title"] = "Delete Device";
+}
+<h2>Delete @Model.AssetTag @Model.Name?</h2>
+
+<p>Are you sure you want to delete this device?</p>
+
+<form method="post" action="/devices/delete/@Model.Id">
+    <button type="submit" class="btn btn-danger">Yes</button>
+    <a href="/devices" class="btn btn-secondary">No</a>
+</form>
+}

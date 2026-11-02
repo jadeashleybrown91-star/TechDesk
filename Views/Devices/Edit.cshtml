@@ -1,0 +1,35 @@
+﻿@model TechDesk.Models.Device
+@{
+    ViewData["Title"] = "Edit Device";
+}
+<h2>Edit Device</h2>
+
+<form method="post" action="/devices/edit/@Model.Id">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="AssetTag" class="form-label"></label>
+        <input asp-for="AssetTag" class="form-control" />
+        <span asp-validation-for="AssetTag" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Category" class="form-label"></label>
+        <input asp-for="Category" class="form-control" />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PurchaseYear" class="form-label"></label>
+        <input asp-for="PurchaseYear" class="form-control" />
+        <span asp-validation-for="PurchaseYear" class="text-danger"></span>
+    </div>
+    <div class="mb-3 form-check">
+        <input asp-for="IsOnLoan" class="form-check-input" />
+        <label asp-for="IsOnLoan" class="form-check-label">On loan?</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="/devices" class="btn btn-secondary">Cancel</a>
+</form>
